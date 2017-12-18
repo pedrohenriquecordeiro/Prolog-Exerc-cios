@@ -98,15 +98,6 @@ retorna([X|L1],[X|L]) :- retorna(L1,L).
 
 
 
-%! Compactar uma lista de elementos consecutivos.
-compactar([],[]).
-compactar([X|L1],Lista)          :- compara(X,L1),compactar(L1,Lista).
-compactar([X|L1],[[X]|Lista])  :- not(compara(X,L1)), compactar(L1,Lista).
-
-compara(Elemento,[X|L1]) :- Elemento == X.
-
-
-
 %! Remover de uma lista um elemento (todas as suas ocorrências).
 remover(_,[],[]).
 remover(Elemento,[Elemento|Cauda],L) :- remover(Elemento,Cauda,L).
